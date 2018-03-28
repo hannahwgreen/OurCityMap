@@ -15,3 +15,6 @@
  *= require foundation_and_overrides
 
  */
+div.mapboxgl-popup-content {
+  padding: 1px
+}

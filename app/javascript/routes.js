@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute, Router, browserHistory } from 'react-router';
-import MapContainer from './containers/MapContainer'
+import HomeContainer from './containers/HomeContainer'
 
 
 const Routes = props => {
@@ -8,7 +8,7 @@ const Routes = props => {
     <div>
       <Router history={browserHistory}>
         <Route path='/'>
-          <IndexRoute component={MapContainer}/>
+          <IndexRoute component={HomeContainer}/>
         </Route>
       </Router>
     </div>
