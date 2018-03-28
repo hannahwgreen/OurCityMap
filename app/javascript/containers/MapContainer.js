@@ -11,22 +11,6 @@ class MapContainer extends React.Component {
     super(props);
     this.state = {
       selectedPhoto: null,
-      photos: [
-        {
-          image_url: 'https://travel.usnews.com/static-travel/images/destinations/45/liberty_bell_-2015.jpg',
-          description:'This place is great',
-          coordinates: [-75.16416549682616,
-            39.95054298488249],
-            visible: true
-          },
-          {
-            image_url: 'https://travel.usnews.com/static-travel/images/destinations/45/liberty_bell_-2015.jpg',
-            description:'This place is great',
-            coordinates: [-75.17416549682616,
-              39.94054298488249],
-              visible: true
-            }
-          ]
         }
       }
       // cDM(){
@@ -45,13 +29,15 @@ class MapContainer extends React.Component {
       // }
 
       render() {
-        let markersArr = this.state.photos.map(photo => {
+
+        let markersArr = this.props.photos.map(photo => {
           return(
             <Feature
               coordinates={photo.coordinates} />
             )
           })
-          let popups = this.state.photos.map(photo => {
+    
+          let popups = this.props.photos.map(photo => {
             if (photo.visible == true){
               return(
                 <Popup
