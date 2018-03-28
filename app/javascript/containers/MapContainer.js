@@ -20,8 +20,8 @@ class MapContainer extends React.Component {
         <Map
           style="mapbox://styles/mapbox/streets-v9"
           containerStyle={{
-            height: "100vh",
-            width: "100vw"
+            height: "50vh",
+            width: "80vw"
           }}>
         </Map>
       </div>
