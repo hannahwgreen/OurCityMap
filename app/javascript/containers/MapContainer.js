@@ -13,13 +13,10 @@ class MapContainer extends React.Component {
       selectedPhoto: null,
         }
       }
-      // cDM(){
-      //   fetch them photos
-      // }
-      //
+
       // handleMarkerClick(e){
       //   e.target.value
-      //   this.state.photos.each{
+      //   this.props.photos.each {
       //     if (photo.id == e.target.id){
       //       photo.visibility = true
       //     } else {
@@ -36,7 +33,7 @@ class MapContainer extends React.Component {
               coordinates={photo.coordinates} />
             )
           })
-    
+
           let popups = this.props.photos.map(photo => {
             if (photo.visible == true){
               return(
