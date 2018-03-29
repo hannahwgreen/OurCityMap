@@ -9,8 +9,6 @@ class PhotoStreamContainer extends React.Component {
     }
   }
 
-  debugger
-
   render() {
     let showPhoto = this.props.photos.map(photo => {
       return (
