@@ -2,6 +2,8 @@
   "name": "new_toy",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^2.2.0",
+    "@mapbox/react-geocoder": "^2.5.0",
     "@rails/webpacker": "~3.3.0",
     "babel-preset-react": "~6.24.1",
     "mapbox-gl": "^0.44.1",

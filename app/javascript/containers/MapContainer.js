@@ -1,6 +1,7 @@
 import React from 'react';
-import PhotoFormContainer from './PhotoFormContainer'
+import PhotoFormContainer from './PhotoFormContainer';
 import PhotoStreamContainer from './PhotoStreamContainer';
+import Geocoder from '../components/Geocoder';
 import ReactMapboxGl, { Layer, Feature, Popup } from "react-mapbox-gl";
 import { Link } from 'react-router';
 
@@ -22,7 +23,6 @@ class MapContainer extends React.Component {
       }
 
       handleMarkerClick(e){
-        debugger
         let center = [e.feature.properties.lng, e.feature.properties.lat]
         this.props.photos.map( photo => {
           if (photo.id == e.feature.properties.photoId){
@@ -36,9 +36,6 @@ class MapContainer extends React.Component {
         let lat = evt.lngLat.lat
         this.setState({newPhotoCoordinates: [lng, lat]})
       }
-
-
-
 
       render() {
 
@@ -62,15 +59,12 @@ class MapContainer extends React.Component {
               <Popup
                 coordinates={this.state.newPhotoCoordinates}
                 anchor="bottom">
-                  <div><Link to={`/photos/new`}><button type="button" className="btn btn-success float-right">Add New Photo</button></Link></div>
+                  <div><Link to={{
+                    pathname: '/photos/new',
+                    state: { detail: this.state.newPhotoCoordinates }
+                  }}> Add New Photo </Link></div>
               </Popup>
             )
-
-            // return(
-            //   <PhotoFormContainer
-            //     coordinate={this.state.newPhotoCoordinates}
-            //   />
-            // )
           })
 
           let photoPopups = this.props.photos.map(photo => {
@@ -104,6 +98,7 @@ class MapContainer extends React.Component {
                       layout={{ "icon-image": "star-15" }}>
                       {markersArr}
                     </Layer>
+                    <Geocoder />
                   </Map>
                 </div>
             )
