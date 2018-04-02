@@ -5,13 +5,13 @@ class Api::V1::PhotosController < ApplicationController
   end
 
   def create
+    binding.pry
     updated_at = photo_params["files"]["updated_at"]
     updated_at = Time.at(updated_at).to_datetime
     @photo = Photo.new
     @photo.file_file_name = photo_params["files"]["name"]
     @photo.file_content_type = photo_params["files"]["type"]
     @photo.file_file_size = photo_params["files"]["size"]
-    binding.pry
     @photo.file_updated_at = updated_at
     @photo.description = photo_params["description"]
     @photo.user_id = current_user.id

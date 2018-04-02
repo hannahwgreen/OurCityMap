@@ -8,7 +8,7 @@ class Uploader extends React.Component {
   constructor() {
     super()
     this.state = {
-      files: [],
+      files: []
     }
   }
 

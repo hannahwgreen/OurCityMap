@@ -24,8 +24,8 @@ class PhotoFormContainer extends Component {
     fetch('/api/v1/photos', {
       credentials: 'same-origin',
       method: 'POST',
-      body: JSON.stringify(submission),
-      headers: { 'Content-Type': 'application/json' }
+      body: submission,
+      headers: { 'Content-Type': 'multipart/form-data' }
     })
     .then(response => {
       if (response.ok) {
@@ -73,6 +73,7 @@ class PhotoFormContainer extends Component {
     //   this.validateDescription(this.state.description)
     // )
     // {
+
     let formPayload = {
       "photo": {
         "description": this.state.description,
@@ -80,14 +81,16 @@ class PhotoFormContainer extends Component {
         }
       }
     }
-      this.addNewPhoto(formPayload)
+    let formData = new FormData();
+    formData.append("upload[file]", this.state.files)
+    formData.append("formPayload", formPayload)
+      this.addNewPhoto(formData)
       this.handleClear(event);
-    // }
   }
 
 
   render() {
-debugger
+
     return(
       <div className="container mt-5">
         <h3>Add a Photo</h3>
