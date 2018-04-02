@@ -7,5 +7,6 @@ Rails.application.routes.draw do
         resources :photos
       end
     end
-    
+
+    resources :photos, only: [:new, :create]
 end

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
+import PhotoTextField from '../components/photoTextField'
 
 class PhotoFormContainer extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class PhotoFormContainer extends Component {
     this.setState({image_url: '', description: ''})
   }
 
-handleSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
     if (
       this.validateImageUrl(this.state.image_url) &&
@@ -81,28 +82,20 @@ handleSubmit(event) {
 
 
   render() {
-    let errorDiv;
-    let errorItems;
-    if (Object.keys(this.state.errors).length > 0) {
-      errorItems = Object.values(this.state.errors).map(error => {
-        return(<li key={error}>{error}</li>)
-      })
-      errorDiv = <div className="callout alert">{errorItems}</div>
-    }
     return(
       <div className="container mt-5">
-      <h3>Add a Photo</h3>
-      <form onSubmit={this.handleSubmit}>
-        {errorDiv}
-        <PhotoTextField
-          content={this.state.image_url}
-          label=" "
-          name="name"
-          handlerFunction={this.handleNameChange}
-        />
-      <div>{this.props.location.state.detail[0]} {this.props.location.state.detail[1]}</div>
-    )
-  }
-}
+        <h3>Add a Photo</h3>
+        <form onSubmit={this.handleSubmit}>
+          <PhotoTextField
+            content={this.state.description}
+            label="Description:"
+            name="name"
+            handlerFunction={this.handleNameChange}
+          />
+        </form>
+        </div>
+        )
+      }
+    }
 
-export default PhotoFormContainer;
+    export default PhotoFormContainer;
