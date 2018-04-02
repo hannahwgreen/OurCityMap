@@ -30,20 +30,19 @@ class HomeContainer extends Component {
 
 
   render() {
-    console.log(this.state.photos)
     return (
-    <div>
       <div>
-      <MapContainer
-        photos={this.state.photos}
-      />
-    </div>
-  <div>
-      <PhotoStreamContainer
-        photos={this.state.photos}
-      />
-    </div>
-  </div>
+        <div>
+          <MapContainer
+            photos={this.state.photos}
+          />
+        </div>
+        <div>
+          <PhotoStreamContainer
+            photos={this.state.photos}
+          />
+        </div>
+      </div>
     )
   }
 }
