@@ -10,8 +10,10 @@
     "prop-types": "~15.6.0",
     "react": "~15.4.2",
     "react-dom": "~15.4.2",
+    "react-dropzone": "^4.2.9",
     "react-mapbox-gl": "^3.8.0",
-    "react-router": "~3.2.0"
+    "react-router": "~3.2.0",
+    "superagent": "^3.8.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1",
