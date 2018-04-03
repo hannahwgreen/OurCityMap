@@ -8,5 +8,5 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :photos, only: [:new, :create]
+    resources :photos, only: [:new, :create, :show]
 end

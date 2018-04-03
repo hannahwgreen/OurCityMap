@@ -16,7 +16,6 @@ class MapContainer extends React.Component {
       newPhotoCoordinates: [],
       center: [-75.16416549682616, 39.95054298488249],
         }
-
         this.handleMarkerClick = this.handleMarkerClick.bind(this);
         this.onClickMap = this.onClickMap.bind(this);
       }
@@ -70,7 +69,7 @@ class MapContainer extends React.Component {
                   key={photo.id}
                   coordinates={photo.coordinates}
                   anchor="top">
-                  <img src={photo.image.url} width='180px' height= '180px'></img>
+                  <Link to={`/photos/${photo.id}`}><img src={photo.image.url} width='180px' height= '180px' ></img></Link>
                 </Popup>
               )
             }
