@@ -1,5 +1,4 @@
 import React from 'react';
-import PhotoFormContainer from './PhotoFormContainer';
 import PhotoStreamContainer from './PhotoStreamContainer';
 import Geocoder from '../components/Geocoder';
 import ReactMapboxGl, { Layer, Feature, Popup } from "react-mapbox-gl";
@@ -59,10 +58,7 @@ class MapContainer extends React.Component {
               <Popup
                 coordinates={this.state.newPhotoCoordinates}
                 anchor="bottom">
-                  <div><Link to={{
-                    pathname: '/photos/new',
-                    state: { detail: this.state.newPhotoCoordinates }
-                  }}> Add New Photo </Link></div>
+                  <a href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </a>
               </Popup>
             )
           })
@@ -74,7 +70,7 @@ class MapContainer extends React.Component {
                   key={photo.id}
                   coordinates={photo.coordinates}
                   anchor="top">
-                  <img src={photo.image_url} width='180px' height= '180px'></img>
+                  <img src={photo.image.url} width='180px' height= '180px'></img>
                 </Popup>
               )
             }

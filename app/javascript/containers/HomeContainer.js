@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MapContainer from './MapContainer';
 import PhotoStreamContainer from './PhotoStreamContainer';
 
-
 class HomeContainer extends Component {
   constructor(props) {
     super(props)
@@ -12,7 +11,8 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/photos').then(response => {
+    fetch('/api/v1/photos')
+    .then(response => {
       if (response.ok) {
         return response;
       } else {
