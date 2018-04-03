@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
-import PhotoTextField from '../components/photoTextField'
+import PhotoTextField from '../components/PhotoTextField'
 
 class PhotoFormContainer extends Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class PhotoFormContainer extends Component {
       image_url: '',
       description: ''
     }
+    this.readFiles = this.readFiles.bind(this);
     this.handleImageUrlChange = this.handleImageUrlChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.addNewPhoto = this.addNewPhoto.bind(this);
@@ -17,12 +18,12 @@ class PhotoFormContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  addNewPhoto(submission) {
+  addNewPhoto(formPayload) {
     fetch('/api/v1/photos', {
       credentials: 'same-origin',
+      headers: {},
       method: 'POST',
-      body: JSON.stringify(submission),
-      headers: { 'Content-Type': 'application/json' }
+      body: formPayLoad
     })
     .then(response => {
       if (response.ok) {
@@ -70,15 +71,19 @@ class PhotoFormContainer extends Component {
       this.validateImageUrl(this.state.image_url) &&
       this.validateDescription(this.state.description)
     )
-    {
-      let formPayload = {
-        image_url: this.state.image_url,
-        description: this.state.description
-      }
-      this.addNewPhoto(formPayload)
+      this.readFiles()
       this.handleClear(event);
     }
   }
+
+  readFile(files) {
+    if (files && files[0]) {
+      let formPayLoad = new FormData();
+    formPayLoad.append('uploaded_image', files[0]);
+    formPayload.append('description', this.state.description)
+    this.addNewPhoto(formPayLoad)
+  }
+}
 
 
   render() {
@@ -86,6 +91,11 @@ class PhotoFormContainer extends Component {
       <div className="container mt-5">
         <h3>Add a Photo</h3>
         <form onSubmit={this.handleSubmit}>
+          <div>
+            <Dropzone onDrop={this.readFile}>
+              <button>Upload a new image</button>
+            </Dropzone>
+          </div>
           <PhotoTextField
             content={this.state.description}
             label="Description:"

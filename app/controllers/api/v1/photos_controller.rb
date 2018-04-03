@@ -4,7 +4,4 @@ class Api::V1::PhotosController < ApplicationController
     render json: photos
   end
 
-  def create
-    photo = Photo.new
-  end
 end

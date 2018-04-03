@@ -13,7 +13,7 @@ class PhotoStreamContainer extends React.Component {
     let showPhoto = this.props.photos.map(photo => {
       return (
           <PhotoTile
-            img={photo.image_url}
+            img={photo.image.url}
             description={photo.description}
           />
       )
