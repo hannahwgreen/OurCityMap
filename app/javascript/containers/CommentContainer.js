@@ -38,7 +38,7 @@ class CommentContainer extends Component {
     .then(body => {
       debugger
       let updateComments = this.state.comments
-      updateComments.unshift(body.comments)
+      updateComments.unshift(body.comment)
       this.setState({
         comments: updateComments
       })
