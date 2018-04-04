@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MapContainer from './MapContainer';
 import PhotoStreamContainer from './PhotoStreamContainer';
+import CategoriesContainer from './CategoriesContainer';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -39,6 +40,11 @@ class HomeContainer extends Component {
         </div>
         <div>
           <PhotoStreamContainer
+            photos={this.state.photos}
+          />
+        </div>
+        <div>
+          <CategoriesContainer
             photos={this.state.photos}
           />
         </div>

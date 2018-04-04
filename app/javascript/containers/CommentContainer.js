@@ -8,7 +8,6 @@ class CommentContainer extends Component {
     this.state = {
       comments: []
     }
-
     this.addNewComment = this.addNewComment.bind(this);
     this.getCommentData = this.getCommentData.bind(this);
   }
@@ -36,7 +35,6 @@ class CommentContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      debugger
       let updateComments = this.state.comments
       updateComments.unshift(body.comment)
       this.setState({
@@ -44,6 +42,10 @@ class CommentContainer extends Component {
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  componentDidMount(){
+    this.getCommentData()
   }
 
   getCommentData() {

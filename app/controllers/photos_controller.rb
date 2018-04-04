@@ -12,7 +12,9 @@ class PhotosController < ApplicationController
     @photo.image = params['photo']['image']
     @photo.description = params['photo']['description']
     @photo.user_id = current_user.id
+    @photo.category_id = params['photo']['category']
     @photo.save
+
     redirect_to root_path
   end
 

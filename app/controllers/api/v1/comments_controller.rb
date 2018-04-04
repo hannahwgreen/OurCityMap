@@ -25,7 +25,6 @@ class Api::V1::CommentsController < ApplicationController
     elsif params[:user_id]
       comment.user = User.find(params[:user_id])
     end
-    binding.pry
     comment.photo_id = photo.id
     if comment.save
       render json: {

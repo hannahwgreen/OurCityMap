@@ -7,8 +7,8 @@ Rails.application.routes.draw do
         resources :photos do
           resources :comments
         end
+        resources :categories 
       end
     end
-
     resources :photos, only: [:new, :create, :show]
 end

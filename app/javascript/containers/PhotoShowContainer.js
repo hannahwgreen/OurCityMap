@@ -6,7 +6,8 @@ class PhotoShowContainer extends Component {
     super(props)
     this.state = {
       photo: {},
-      url: ""
+      url: '',
+      category: ''
     }
   }
 
@@ -27,7 +28,8 @@ class PhotoShowContainer extends Component {
     .then(body => {
       this.setState({
         photo: body.photo,
-        url: body.photo.image.url
+        url: body.photo.image.url,
+        category: body.category
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -44,9 +46,10 @@ class PhotoShowContainer extends Component {
           id={photo_id}
           image={this.state.url}
           description={photo_description}
+          category={this.state.category}
         />
         <CommentContainer
-          id={photo_id}
+          id={this.props.params.id}
         />
       </div>
     )
