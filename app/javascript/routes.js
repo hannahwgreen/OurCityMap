@@ -9,6 +9,7 @@ const Routes = props => {
       <Router history={browserHistory}>
         <Route path='/'>
           <IndexRoute component={HomeContainer}/>
+          <Route path='/photos/new'/>
           <Route path='/photos/:id' component={PhotoShowContainer} />
         </Route>
       </Router>

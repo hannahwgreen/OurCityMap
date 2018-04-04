@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PhotoShowTile from '../components/PhotoShowTile'
-
+import CommentContainer from './CommentContainer'
 class PhotoShowContainer extends Component {
   constructor(props) {
     super(props)
@@ -44,6 +44,9 @@ class PhotoShowContainer extends Component {
           id={photo_id}
           image={this.state.url}
           description={photo_description}
+        />
+        <CommentContainer
+          id={photo_id}
         />
       </div>
     )
