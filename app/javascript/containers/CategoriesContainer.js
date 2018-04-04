@@ -6,17 +6,8 @@ class CategoriesContainer extends Component {
     super(props)
     this.state = {
       categories: [],
-      selectedCategoryId: null
     }
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
-  }
 
-  handleCategoryChange(id) {
-    if (id === this.state.selectedCategoryId) {
-      this.setState({selectedCategoryId: null})
-    } else {
-      this.setState({selectedCategoryId: id})
-    }
   }
 
   componentDidMount() {
@@ -48,7 +39,7 @@ class CategoriesContainer extends Component {
       }
 
       let handleClick = () => {
-        this.handleCategoryChange(category.id)
+        this.props.onCategoryChange(category.id)
         console.log(category.id);
       }
 

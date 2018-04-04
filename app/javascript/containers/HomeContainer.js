@@ -43,11 +43,6 @@ class HomeContainer extends Component {
             photos={this.state.photos}
           />
         </div>
-        <div>
-          <CategoriesContainer
-            photos={this.state.photos}
-          />
-        </div>
       </div>
     )
   }
