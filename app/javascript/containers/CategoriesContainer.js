@@ -29,20 +29,12 @@ class CategoriesContainer extends Component {
   }
 
   render() {
+    debugger
     let className;
     let categories = this.state.categories.map(category => {
-
-      if(category.id === this.props.selectedCategoryId){
-        className = "nav-link active"
-      } else {
-        className = "nav-link"
-      }
-
       let handleClick = () => {
         this.props.onCategoryChange(category.id)
-        console.log(category.id);
       }
-
       return(
         <CategoryTile
           key={category.id}
