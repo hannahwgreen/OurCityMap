@@ -6,7 +6,10 @@ class Api::V1::PhotosController < ApplicationController
 
   def show
     photo = Photo.find(params[:id])
-
-    render json: { photo: photo }
+    category = photo.category.name
+    render json: {
+      photo: photo,
+      category: category
+    }
   end
 end

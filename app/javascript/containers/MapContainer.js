@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoStreamContainer from './PhotoStreamContainer';
+import CategoriesContainer from './CategoriesContainer';
 import Geocoder from '../components/Geocoder';
 import ReactMapboxGl, { Layer, Feature, Popup } from "react-mapbox-gl";
 import { Link } from 'react-router';
@@ -15,9 +16,11 @@ class MapContainer extends React.Component {
       selectedPhoto: null,
       newPhotoCoordinates: [],
       center: [-75.16416549682616, 39.95054298488249],
+      selectedCategoryId: null,
         }
         this.handleMarkerClick = this.handleMarkerClick.bind(this);
         this.onClickMap = this.onClickMap.bind(this);
+        this.handleCategoryChange = this.handleCategoryChange.bind(this);
       }
 
       handleMarkerClick(e){
@@ -35,22 +38,51 @@ class MapContainer extends React.Component {
         this.setState({newPhotoCoordinates: [lng, lat]})
       }
 
-      render() {
+      handleCategoryChange(id) {
+        if (id === this.state.selectedCategoryId) {
+          this.setState({selectedCategoryId: null})
+        } else {
+          this.setState({selectedCategoryId: id})
+        }
+      }
 
+      render() {
         let markersArr = this.props.photos.map(photo => {
-          let lng = Number(photo.coordinates[0])
-          let lat = Number(photo.coordinates[1])
-          let properties = {photoId: photo.id, lng: lng, lat: lat}
-          return(
-            <Feature
-              key={photo.id}
-              photoId={photo.id}
-              coordinates={photo.coordinates}
-              onClick={this.handleMarkerClick}
-              properties={properties}
-            />
-            )
-          })
+          if (this.state.selectedCategoryId){
+            if (photo.category_id == this.state.selectedCategoryId) {
+              let lng = Number(photo.coordinates[0])
+              let lat = Number(photo.coordinates[1])
+              let properties = {photoId: photo.id, lng: lng, lat: lat}
+              return(
+                <Feature
+                  key={photo.id}
+                  photoId={photo.id}
+                  coordinates={photo.coordinates}
+                  onClick={this.handleMarkerClick}
+                  properties={properties}
+                  category={photo.category_id}
+                />
+              )
+            }
+            else {
+              return null
+            }
+          } else {
+            let lng = Number(photo.coordinates[0])
+            let lat = Number(photo.coordinates[1])
+            let properties = {photoId: photo.id, lng: lng, lat: lat}
+            return(
+              <Feature
+                key={photo.id}
+                photoId={photo.id}
+                coordinates={photo.coordinates}
+                onClick={this.handleMarkerClick}
+                properties={properties}
+                category={photo.category_id}
+              />
+              )
+            }
+          }).filter(x => x)
 
           let newPhotoPopup = this.state.newPhotoCoordinates.map(coordinates => {
             return(
@@ -75,7 +107,9 @@ class MapContainer extends React.Component {
             }
           })
 
+          debugger
           return(
+            <div>
               <div>
                 <Map
                   center={this.state.center}
@@ -96,6 +130,13 @@ class MapContainer extends React.Component {
                     <Geocoder />
                   </Map>
                 </div>
+                <div>
+                  <CategoriesContainer
+                    photos={this.props.photos}
+                    onCategoryChange={this.handleCategoryChange}
+                  />
+                </div>
+              </div>
             )
           }
         }

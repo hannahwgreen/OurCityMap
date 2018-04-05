@@ -6,6 +6,7 @@ const PhotoShowTile = props => {
         <div className="container">
           <img src={props.image} width='300px' height= '300px'></img>
           <p className="lead photo-description">{props.description}</p>
+          <p>{props.category}</p>
         </div>
       </div>
   )

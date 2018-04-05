@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapContainer from './MapContainer';
 import PhotoStreamContainer from './PhotoStreamContainer';
 
+
 class HomeContainer extends Component {
   constructor(props) {
     super(props)
