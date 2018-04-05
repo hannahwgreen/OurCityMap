@@ -107,11 +107,11 @@ class MapContainer extends React.Component {
             }
           })
 
-          debugger
           return(
-            <div>
-              <div>
-                <Map
+            <div className="container-fluid">
+              <div className="row">
+                <span className="col-lg-8">
+                  <Map
                   center={this.state.center}
                     onClick={this.onClickMap}
                     style="mapbox://styles/mapbox/streets-v9"
@@ -129,14 +129,15 @@ class MapContainer extends React.Component {
                     </Layer>
                     <Geocoder />
                   </Map>
-                </div>
-                <div>
-                  <CategoriesContainer
-                    photos={this.props.photos}
-                    onCategoryChange={this.handleCategoryChange}
-                  />
-                </div>
+                </span>
+                <span className="col-fixed-4">
+                <CategoriesContainer
+                  photos={this.props.photos}
+                  onCategoryChange={this.handleCategoryChange}
+                />
+              </span>
               </div>
+            </div>
             )
           }
         }

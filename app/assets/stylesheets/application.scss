@@ -1,0 +1,41 @@
+@import "bootstrap";
+
+a {
+  color: white;
+}
+
+section.top-bar-section {
+  text-align: right;
+}
+
+ul.right {
+  text-align: right;
+  padding-right: 50px;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav.top-bar {
+  background-color: #3F3F3F;
+}
+
+div.mapboxgl-popup-content {
+  padding: 1px;
+}
+
+button.geocoder-icon.geocoder-icon-close {
+  visibility: hidden
+}
+
+input {
+width: 360px;
+}
+
+ul.suggestions {
+  background-color: white;
+  list-style: none;
+  width: 360px
+}

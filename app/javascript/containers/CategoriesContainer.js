@@ -29,7 +29,6 @@ class CategoriesContainer extends Component {
   }
 
   render() {
-    debugger
     let className;
     let categories = this.state.categories.map(category => {
       let handleClick = () => {
@@ -47,9 +46,9 @@ class CategoriesContainer extends Component {
     })
 
     return(
-      <div className="p-3 mb-3 bg-light text-dark">
+      <div className="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
         <h5 className="text-center">View by category</h5>
-        <ul className="nav nav-pills nav-fill">
+        <ul className="nav nav-pills flex-column">
           {categories}
         </ul>
       </div>

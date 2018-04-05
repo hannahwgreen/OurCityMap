@@ -33,12 +33,12 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="row">
           <MapContainer
             photos={this.state.photos}
           />
         </div>
-        <div>
+        <div className="row">
           <PhotoStreamContainer
             photos={this.state.photos}
           />
