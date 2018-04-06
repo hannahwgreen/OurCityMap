@@ -67,7 +67,9 @@ class MapContainer extends React.Component {
       }
     }).filter(x => x)
 
-    let newPhotoPopup = this.state.newPhotoCoordinates.map(coordinates => {
+    let newPhotoPopup;
+    if (!this.props.selectedPhoto){
+      newPhotoPopup = this.state.newPhotoCoordinates.map(coordinates => {
       return(
         <Popup
           coordinates={this.state.newPhotoCoordinates}
@@ -77,6 +79,7 @@ class MapContainer extends React.Component {
         </Popup>
       )
     })
+  }
 
     let photoPopups = this.props.photos.map(photo => {
       if (photo == this.props.selectedPhoto){
@@ -92,7 +95,7 @@ class MapContainer extends React.Component {
         )
       }
     })
-    
+
     return(
       <div>
         <div>
