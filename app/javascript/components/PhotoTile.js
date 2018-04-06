@@ -3,12 +3,12 @@ import { Link } from 'react-router';
 
 const PhotoTile = props => {
   return(
-    <div className="carousel-inner">
-       <div class="item active">
-      <Link to={`/photos/${props.id}`}><img src={props.img} width='300px' height= '300px'></img> </Link>
-      <p>{props.description} </p>
+    <div className="card">
+        <Link to={`/photos/${props.id}`}><img className='card-img-top' alt="Card image cap" src={props.img} width='300px' height= '300px'></img> </Link>
+        <div className="card-body">
+        <p className="card-text">{props.description} </p>
+      </div>
     </div>
-  </div>
   )
 }
 

@@ -101,23 +101,30 @@ class MapContainer extends React.Component {
                   key={photo.id}
                   coordinates={photo.coordinates}
                   anchor="top">
-                  <Link to={`/photos/${photo.id}`}><img src={photo.image.url} width='180px' height= '180px' ></img></Link>
+                  <Link to={`/photos/${photo.id}`}><img className='card-img-top' alt="Card image cap" src={photo.image.url} width='180px' height= '180px' ></img></Link>
+
                 </Popup>
               )
             }
           })
 
           return(
-            <div className="container-fluid">
-              <div className="row">
-                <span className="col-lg-8">
+            <div>
+              <div>
+                <span>
+                  <CategoriesContainer
+                    photos={this.props.photos}
+                    onCategoryChange={this.handleCategoryChange}
+                  />
+                </span>
+                <span className='map'>
                   <Map
                   center={this.state.center}
                     onClick={this.onClickMap}
                     style="mapbox://styles/mapbox/streets-v9"
                     containerStyle={{
                       height: "500px",
-                      width: "800px"
+                      width: "1000px"
                     }}>
                     {photoPopups}
                     {newPhotoPopup}
@@ -130,12 +137,6 @@ class MapContainer extends React.Component {
                     <Geocoder />
                   </Map>
                 </span>
-                <span className="col-fixed-4">
-                <CategoriesContainer
-                  photos={this.props.photos}
-                  onCategoryChange={this.handleCategoryChange}
-                />
-              </span>
               </div>
             </div>
             )
