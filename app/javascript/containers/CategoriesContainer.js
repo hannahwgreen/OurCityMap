@@ -31,15 +31,12 @@ class CategoriesContainer extends Component {
   render() {
     let className;
     let categories = this.state.categories.map(category => {
-      let handleClick = () => {
-        this.props.onCategoryChange(category.id)
-      }
       return(
         <CategoryTile
           key={category.id}
           id={category.id}
           name={category.name}
-          handleClick={handleClick}
+          handleClick={this.props.onCategoryChange}
           className={className}
         />
       )

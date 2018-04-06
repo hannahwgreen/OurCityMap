@@ -18,6 +18,7 @@ class PhotoStreamContainer extends React.Component {
           img={photo.image.url}
           description={photo.description}
           id={photo.id}
+          handleClick={this.props.handleClick}
         />
       )
     })
