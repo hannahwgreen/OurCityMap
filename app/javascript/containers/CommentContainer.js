@@ -14,7 +14,6 @@ class CommentContainer extends Component {
 
   addNewComment(submission) {
     let id = this.props.id
-    debugger
     fetch(`/api/v1/photos/${id}/comments`, {
       credentials: 'same-origin',
       method: 'POST',

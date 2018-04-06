@@ -75,7 +75,7 @@ class MapContainer extends React.Component {
           coordinates={this.state.newPhotoCoordinates}
           anchor="bottom">
           <button type="submit" name="x" onClick={this.closeAddPhoto}>x</button>
-          <a href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </a>
+          <a id='newphotolink' href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </a>
         </Popup>
       )
     })
@@ -120,7 +120,7 @@ class MapContainer extends React.Component {
               <Layer
                 type="symbol"
                 id="marker"
-                layout={{ "icon-image": "star-15" }}>
+                layout={{ "icon-image": "attraction-15", "icon-size": 1.5}}>
                 {markersArr}
               </Layer>
               <Geocoder />

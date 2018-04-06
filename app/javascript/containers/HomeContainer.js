@@ -34,7 +34,6 @@ closeMarkerWindow(e){
 }
 
 handleMarkerClick(e){
-  debugger
   let center = [e.feature.properties.lng, e.feature.properties.lat]
   this.state.photos.map( photo => {
     if (photo.id == e.feature.properties.photoId){
