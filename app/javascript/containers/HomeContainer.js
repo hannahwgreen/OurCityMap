@@ -19,9 +19,13 @@ class HomeContainer extends Component {
   }
 
   handlePhotoStreamClick(e){
+    let selectedCategoryId = this.state.selectedCategoryId
    this.state.photos.map( photo => {
-     if (photo.id == e.target.id)
-     {this.setState({selectedPhoto: photo, center: photo.coordinates})}
+     if (photo.id == e.target.id){
+       this.setState({selectedPhoto: photo, center: photo.coordinates})
+       if (photo.category_id != selectedCategoryId) {
+         this.setState({selectedCategoryId: null})
+     }}
   })
 }
 
@@ -30,6 +34,7 @@ closeMarkerWindow(e){
 }
 
 handleMarkerClick(e){
+  debugger
   let center = [e.feature.properties.lng, e.feature.properties.lat]
   this.state.photos.map( photo => {
     if (photo.id == e.feature.properties.photoId){

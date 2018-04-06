@@ -24,8 +24,12 @@ class PhotoStreamContainer extends React.Component {
     })
 
     return (
-      <div className='card-deck'>{showTiles}</div>
-    )
+      <div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example card-deck">
+        <div className="list-group row" id="list-example">
+          {showTiles}
+        </div>
+      </div>
+  )
   }
 }
 

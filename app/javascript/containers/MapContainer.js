@@ -41,7 +41,7 @@ class MapContainer extends React.Component {
               key={photo.id}
               photoId={photo.id}
               coordinates={photo.coordinates}
-              onClick={this.handleMarkerClick}
+              onClick={this.props.handleClick}
               properties={properties}
               category={photo.category_id}
             />
@@ -103,6 +103,7 @@ class MapContainer extends React.Component {
             <CategoriesContainer
               photos={this.props.photos}
               onCategoryChange={this.props.handleCategoryChange}
+              selectedCategoryId={this.props.selectedCategoryId}
             />
           </span>
           <span className='map'>

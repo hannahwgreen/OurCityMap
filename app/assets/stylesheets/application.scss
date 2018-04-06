@@ -41,5 +41,38 @@ ul.suggestions {
 }
 
 .mapboxgl-map{
-  margin: 50px auto;
+  margin: 0px auto;
+  margin-bottom: 60px;
+}
+
+.categories {
+  margin-top: 50px;
+}
+
+.card-deck {
+  margin-top: 20px;
+}
+
+.well {
+  height: 325px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 150%;
+  max-width: 100%;
+}
+
+.box{
+    overflow-x:auto;
+}
+.row {
+    width:150%;
+ }
+
+ body {
+  position: relative;
+}
+
+.list-group {
+  max-height:300px;
+  overflow-y:auto;
 }
