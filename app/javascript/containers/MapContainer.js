@@ -75,7 +75,7 @@ class MapContainer extends React.Component {
           coordinates={this.state.newPhotoCoordinates}
           anchor="bottom">
           <button type="submit" name="x" onClick={this.closeAddPhoto}>x</button>
-          <button href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </button>
+          <a href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </a>
         </Popup>
       )
     })

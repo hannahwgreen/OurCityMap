@@ -51,6 +51,7 @@ ul.suggestions {
 
 .card-deck {
   margin-top: 20px;
+  height: 400px;
 }
 
 .well {
@@ -73,6 +74,7 @@ ul.suggestions {
 }
 
 .list-group {
-  max-height:300px;
+  margin-top: 20px;
+  max-height:400px;
   overflow-y:auto;
 }
