@@ -13,131 +13,123 @@ class MapContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPhoto: null,
       newPhotoCoordinates: [],
-      center: [-75.16416549682616, 39.95054298488249],
-      selectedCategoryId: null,
-        }
-        this.handleMarkerClick = this.handleMarkerClick.bind(this);
-        this.onClickMap = this.onClickMap.bind(this);
-        this.handleCategoryChange = this.handleCategoryChange.bind(this);
-      }
+    }
+    this.onClickMap = this.onClickMap.bind(this);
+    this.closeAddPhoto = this.closeAddPhoto.bind(this);
+  }
 
-      handleMarkerClick(e){
-        let center = [e.feature.properties.lng, e.feature.properties.lat]
-        this.props.photos.map( photo => {
-          if (photo.id == e.feature.properties.photoId){
-            this.setState({selectedPhoto: photo, center: center})
-          }
-        })
-      }
+  onClickMap(map, evt) {
+    let lng = evt.lngLat.lng
+    let lat = evt.lngLat.lat
+    this.setState({newPhotoCoordinates: [lng, lat]})
+  }
 
-      onClickMap(map, evt) {
-        let lng = evt.lngLat.lng
-        let lat = evt.lngLat.lat
-        this.setState({newPhotoCoordinates: [lng, lat]})
-      }
+  closeAddPhoto(e){
+    this.setState({newPhotoCoordinates: []})
+  }
 
-      handleCategoryChange(id) {
-        if (id === this.state.selectedCategoryId) {
-          this.setState({selectedCategoryId: null})
-        } else {
-          this.setState({selectedCategoryId: id})
-        }
-      }
-
-      render() {
-        let markersArr = this.props.photos.map(photo => {
-          if (this.state.selectedCategoryId){
-            if (photo.category_id == this.state.selectedCategoryId) {
-              let lng = Number(photo.coordinates[0])
-              let lat = Number(photo.coordinates[1])
-              let properties = {photoId: photo.id, lng: lng, lat: lat}
-              return(
-                <Feature
-                  key={photo.id}
-                  photoId={photo.id}
-                  coordinates={photo.coordinates}
-                  onClick={this.handleMarkerClick}
-                  properties={properties}
-                  category={photo.category_id}
-                />
-              )
-            }
-            else {
-              return null
-            }
-          } else {
-            let lng = Number(photo.coordinates[0])
-            let lat = Number(photo.coordinates[1])
-            let properties = {photoId: photo.id, lng: lng, lat: lat}
-            return(
-              <Feature
-                key={photo.id}
-                photoId={photo.id}
-                coordinates={photo.coordinates}
-                onClick={this.handleMarkerClick}
-                properties={properties}
-                category={photo.category_id}
-              />
-              )
-            }
-          }).filter(x => x)
-
-          let newPhotoPopup = this.state.newPhotoCoordinates.map(coordinates => {
-            return(
-              <Popup
-                coordinates={this.state.newPhotoCoordinates}
-                anchor="bottom">
-                  <a href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </a>
-              </Popup>
-            )
-          })
-
-          let photoPopups = this.props.photos.map(photo => {
-            if (photo == this.state.selectedPhoto){
-              return(
-                <Popup
-                  key={photo.id}
-                  coordinates={photo.coordinates}
-                  anchor="top">
-                  <Link to={`/photos/${photo.id}`}><img src={photo.image.url} width='180px' height= '180px' ></img></Link>
-                </Popup>
-              )
-            }
-          })
-
-          debugger
+  render() {
+    let markersArr = this.props.photos.map(photo => {
+      if (this.props.selectedCategoryId){
+        if (photo.category_id == this.props.selectedCategoryId) {
+          let lng = Number(photo.coordinates[0])
+          let lat = Number(photo.coordinates[1])
+          let properties = {photoId: photo.id, lng: lng, lat: lat}
           return(
-            <div>
-              <div>
-                <Map
-                  center={this.state.center}
-                    onClick={this.onClickMap}
-                    style="mapbox://styles/mapbox/streets-v9"
-                    containerStyle={{
-                      height: "500px",
-                      width: "800px"
-                    }}>
-                    {photoPopups}
-                    {newPhotoPopup}
-                    <Layer
-                      type="symbol"
-                      id="marker"
-                      layout={{ "icon-image": "star-15" }}>
-                      {markersArr}
-                    </Layer>
-                    <Geocoder />
-                  </Map>
-                </div>
-                <div>
-                  <CategoriesContainer
-                    photos={this.props.photos}
-                    onCategoryChange={this.handleCategoryChange}
-                  />
-                </div>
-              </div>
-            )
-          }
+            <Feature
+              key={photo.id}
+              photoId={photo.id}
+              coordinates={photo.coordinates}
+              onClick={this.props.handleClick}
+              properties={properties}
+              category={photo.category_id}
+            />
+          )
         }
-        export default MapContainer;
+        else {
+          return null
+        }
+      } else {
+        let lng = Number(photo.coordinates[0])
+        let lat = Number(photo.coordinates[1])
+        let properties = {photoId: photo.id, lng: lng, lat: lat}
+        return(
+          <Feature
+            key={photo.id}
+            photoId={photo.id}
+            coordinates={photo.coordinates}
+            onClick={this.props.handleClick}
+            properties={properties}
+            category={photo.category_id}
+          />
+        )
+      }
+    }).filter(x => x)
+
+    let newPhotoPopup;
+    if (!this.props.selectedPhoto){
+      newPhotoPopup = this.state.newPhotoCoordinates.map(coordinates => {
+      return(
+        <Popup
+          coordinates={this.state.newPhotoCoordinates}
+          anchor="bottom">
+          <button type="submit" name="x" onClick={this.closeAddPhoto}>x</button>
+          <a id='newphotolink' href={`/photos/new?coordinates=${this.state.newPhotoCoordinates}`}> Add New Photo </a>
+        </Popup>
+      )
+    })
+  }
+
+    let photoPopups = this.props.photos.map(photo => {
+      if (photo == this.props.selectedPhoto){
+        return(
+          <Popup
+            coordinates={photo.coordinates}
+            anchor="top">
+            <div>
+              <button type="submit" name="myButton" onClick={this.props.closeMarker}>x</button>
+            </div>
+            <Link to={`/photos/${photo.id}`}><img className='card-img-top' alt="Card image cap" src={photo.image.url} style={{width: 200, height: 200}}></img></Link>
+          </Popup>
+        )
+      }
+    })
+
+    return(
+      <div>
+        <div>
+          <span>
+            <CategoriesContainer
+              photos={this.props.photos}
+              onCategoryChange={this.props.handleCategoryChange}
+              selectedCategoryId={this.props.selectedCategoryId}
+            />
+          </span>
+          <span className='map'>
+            <Map
+              center={this.props.center}
+              onClick={this.onClickMap}
+              zoom={[13]}
+              style="mapbox://styles/hannahwgreen/cjfos07sn3axd2smvr1233gvj"
+              containerStyle={{
+                height: "500px",
+                width: "1000px"
+              }}>
+              {photoPopups}
+              {newPhotoPopup}
+              <Layer
+                type="symbol"
+                id="marker"
+                layout={{ "icon-image": "attraction-15", "icon-size": 1.5}}>
+                {markersArr}
+              </Layer>
+              <Geocoder />
+            </Map>
+          </span>
+        </div>
+      </div>
+    )
+  }
+}
+export default MapContainer;

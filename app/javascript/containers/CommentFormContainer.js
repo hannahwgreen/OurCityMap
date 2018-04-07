@@ -47,7 +47,8 @@ class CommentFormContainer extends Component {
 
   render() {
     return (
-      <form className="new-comment-form callout mb-5" onSubmit={this.handleSubmit}>
+      <div className='col commentsformrow'>
+      <form className="new-comment-form callout mb-5 commentform" onSubmit={this.handleSubmit}>
         <h3>Add Comment for this photo</h3>
         <CommentTextArea
           content={this.state.body}
@@ -59,6 +60,7 @@ class CommentFormContainer extends Component {
           <button className="btn btn-primary" type="submit" value="Submit">Submit</button>
         </div>
       </form>
+    </div>
     )
   }
 }

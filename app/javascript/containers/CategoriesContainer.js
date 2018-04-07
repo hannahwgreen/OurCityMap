@@ -28,26 +28,29 @@ class CategoriesContainer extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+
   render() {
-    debugger
     let className;
     let categories = this.state.categories.map(category => {
-      let handleClick = () => {
-        this.props.onCategoryChange(category.id)
-      }
+      if(category.id == this.props.selectedCategoryId){
+        className = "on"
+        } else {
+          className = "off"
+        }
+
       return(
         <CategoryTile
           key={category.id}
           id={category.id}
           name={category.name}
-          handleClick={handleClick}
+          handleClick={this.props.onCategoryChange}
           className={className}
         />
       )
     })
 
     return(
-      <div className="p-3 mb-3 bg-light text-dark">
+      <div className="p-3 mb-3 categories">
         <h5 className="text-center">View by category</h5>
         <ul className="nav nav-pills nav-fill">
           {categories}

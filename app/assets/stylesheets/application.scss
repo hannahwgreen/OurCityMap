@@ -1,0 +1,152 @@
+@import "bootstrap";
+
+a {
+  color: white;
+}
+
+ul.right {
+  text-align: right;
+  padding-right: 50px;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav.top-bar {
+  background-color: #3F3F3F;
+}
+
+div.mapboxgl-popup-content {
+  padding: 1px;
+}
+
+button.geocoder-icon.geocoder-icon-close {
+  visibility: hidden
+}
+
+input {
+width: 360px;
+}
+
+ul.suggestions {
+  background-color: white;
+  list-style: none;
+  width: 360px
+}
+
+.mapboxgl-map{
+  margin: 0px auto;
+  margin-bottom: 60px;
+}
+
+.categories {
+  margin-top: 10px;
+  background-color: #F2F1F6
+}
+
+.card-deck {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 400px;
+}
+
+.well {
+  height: 325px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 150%;
+  max-width: 100%;
+}
+
+.box{
+    overflow-x:auto;
+}
+
+ body {
+  position: relative;
+  background-color: #FCFCFD;
+  font-family: 'Lobster', cursive;
+}
+
+.list-group {
+  margin-top: 20px;
+  max-height:400px;
+  overflow-y:auto;
+  width:150%;
+}
+
+#newphotolink {
+  color: black;
+}
+
+.photoshowtile {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.commentform {
+  margin: 30px auto;
+}
+
+
+.showtile {
+  font-family: 'Khula', sans-serif;
+  height: 500px;
+  width: auto;
+  margin-left: 100px;
+}
+
+.card-body.show {
+  font-family: 'Khula', sans-serif;
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.comments {
+  font-family: 'Khula', sans-serif;
+  margin-top: 80px;
+  margin-left: 58px;
+}
+
+.moveme {
+  margin-top: 50px;
+}
+
+.off{
+  font-size: 20px;
+
+}
+.on{
+  background-color: #F0DDEA;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left:20px;
+  padding-right:20px;
+  border-width: 1px;
+  border-radius: 3px;
+  color: white;
+  font-size: 20px;
+}
+
+.card-text{
+  font-family: 'Khula', sans-serif;
+}
+
+.titlehead{
+  font-size: 36px;
+}
+
+.card {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CFCEDE;
+}
+
+.card.img.top{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CFCEDE;
+}

@@ -14,7 +14,6 @@ class CommentContainer extends Component {
 
   addNewComment(submission) {
     let id = this.props.id
-    debugger
     fetch(`/api/v1/photos/${id}/comments`, {
       credentials: 'same-origin',
       method: 'POST',
@@ -89,8 +88,8 @@ class CommentContainer extends Component {
     })
 
     return(
-      <div className="container">
-        <ul className="list-unstyled">
+      <div className="col moveme">
+        <ul className="list-unstyled comments">
           {comments}
         </ul>
         <CommentFormContainer

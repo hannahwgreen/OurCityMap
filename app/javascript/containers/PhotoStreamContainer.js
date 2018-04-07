@@ -18,13 +18,19 @@ class PhotoStreamContainer extends React.Component {
           img={photo.image.url}
           description={photo.description}
           id={photo.id}
+          handleClick={this.props.handleClick}
+          date={photo.created_at}
         />
       )
     })
 
     return (
-      <div>{showTiles}</div>
-    )
+      <div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example card-deck">
+        <div className="list-group row" id="list-example">
+          {showTiles}
+        </div>
+      </div>
+  )
   }
 }
 
