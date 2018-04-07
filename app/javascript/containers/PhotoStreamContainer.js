@@ -19,6 +19,7 @@ class PhotoStreamContainer extends React.Component {
           description={photo.description}
           id={photo.id}
           handleClick={this.props.handleClick}
+          date={photo.created_at}
         />
       )
     })

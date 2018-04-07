@@ -4,10 +4,6 @@ a {
   color: white;
 }
 
-section.top-bar-section {
-  text-align: right;
-}
-
 ul.right {
   text-align: right;
   padding-right: 50px;
@@ -46,11 +42,13 @@ ul.suggestions {
 }
 
 .categories {
-  margin-top: 50px;
+  margin-top: 10px;
+  background-color: #F2F1F6
 }
 
 .card-deck {
   margin-top: 20px;
+  margin-left: 20px;
   height: 400px;
 }
 
@@ -65,20 +63,90 @@ ul.suggestions {
 .box{
     overflow-x:auto;
 }
-.row {
-    width:150%;
- }
 
  body {
   position: relative;
+  background-color: #FCFCFD;
+  font-family: 'Lobster', cursive;
 }
 
 .list-group {
   margin-top: 20px;
   max-height:400px;
   overflow-y:auto;
+  width:150%;
 }
 
 #newphotolink {
   color: black;
+}
+
+.photoshowtile {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.commentform {
+  margin: 30px auto;
+}
+
+
+.showtile {
+  font-family: 'Khula', sans-serif;
+  height: 500px;
+  width: auto;
+  margin-left: 100px;
+}
+
+.card-body.show {
+  font-family: 'Khula', sans-serif;
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.comments {
+  font-family: 'Khula', sans-serif;
+  margin-top: 80px;
+  margin-left: 58px;
+}
+
+.moveme {
+  margin-top: 50px;
+}
+
+.off{
+  font-size: 20px;
+
+}
+.on{
+  background-color: #F0DDEA;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left:20px;
+  padding-right:20px;
+  border-width: 1px;
+  border-radius: 3px;
+  color: white;
+  font-size: 20px;
+}
+
+.card-text{
+  font-family: 'Khula', sans-serif;
+}
+
+.titlehead{
+  font-size: 36px;
+}
+
+.card {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CFCEDE;
+}
+
+.card.img.top{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CFCEDE;
 }

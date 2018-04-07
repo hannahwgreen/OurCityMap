@@ -33,9 +33,9 @@ class CategoriesContainer extends Component {
     let className;
     let categories = this.state.categories.map(category => {
       if(category.id == this.props.selectedCategoryId){
-        className = "nav-link active"
+        className = "on"
         } else {
-          className = "nav-link"
+          className = "off"
         }
 
       return(
@@ -50,7 +50,7 @@ class CategoriesContainer extends Component {
     })
 
     return(
-      <div className="p-3 mb-3 bg-light text-dark categories">
+      <div className="p-3 mb-3 categories">
         <h5 className="text-center">View by category</h5>
         <ul className="nav nav-pills nav-fill">
           {categories}

@@ -110,7 +110,8 @@ class MapContainer extends React.Component {
             <Map
               center={this.props.center}
               onClick={this.onClickMap}
-              style="mapbox://styles/mapbox/streets-v9"
+              zoom={[13]}
+              style="mapbox://styles/hannahwgreen/cjfos07sn3axd2smvr1233gvj"
               containerStyle={{
                 height: "500px",
                 width: "1000px"

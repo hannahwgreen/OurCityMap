@@ -88,8 +88,8 @@ class CommentContainer extends Component {
     })
 
     return(
-      <div className="container">
-        <ul className="list-unstyled">
+      <div className="col moveme">
+        <ul className="list-unstyled comments">
           {comments}
         </ul>
         <CommentFormContainer

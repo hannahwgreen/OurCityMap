@@ -7,12 +7,12 @@ class PhotoShowContainer extends Component {
     this.state = {
       photo: {},
       url: '',
-      category: ''
+      category: '',
+      date: ''
     }
   }
 
   componentDidMount() {
-
     let id = this.props.params.id
     fetch(`/api/v1/photos/${id}`)
     .then(response => {
@@ -26,10 +26,12 @@ class PhotoShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      debugger
       this.setState({
         photo: body.photo,
         url: body.photo.image.url,
-        category: body.category
+        category: body.category,
+        date: body.date
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -41,17 +43,22 @@ class PhotoShowContainer extends Component {
 
     return(
       <div>
+      <div className='photoshowtile'>
         <PhotoShowTile
           key={photo_id}
           id={photo_id}
           image={this.state.url}
           description={photo_description}
           category={this.state.category}
+          date={this.state.date}
         />
+      </div>
+      <div className='commentcontainer'>
         <CommentContainer
           id={this.props.params.id}
         />
       </div>
+    </div>
     )
   }
 }
