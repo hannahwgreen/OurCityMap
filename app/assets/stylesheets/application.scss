@@ -70,6 +70,15 @@ ul.suggestions {
   font-family: 'Lobster', cursive;
 }
 
+.list-group {
+  margin-top: 0px;
+  max-height:400px;
+  overflow-y:auto;
+  width:150%;
+  background-color: #F2F1F6;
+  padding-top: 20px;
+}
+
 #newphotolink {
   color: black;
 }
@@ -195,20 +204,11 @@ ul.suggestions {
   font-size: 14px;
 }
 
-.list-group {
-  margin-top: 0px;
-  max-height:400px;
-  overflow-y:auto;
-  width:150%;
-  background-color: #F2F1F6;
-  padding-top: 20px;
-}
-
 .cardwhole {
   border-style: solid;
   border-width: 5px;
   border-color: white;
   background-color: white;
-  margin-left: 10px;
-  border-radius: 2px;
+  margin-left: 12px;
+  border-radius:3px;
 }
