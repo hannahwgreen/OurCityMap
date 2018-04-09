@@ -10125,45 +10125,46 @@ body {
 /* line 133, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .card-text {
   font-family: 'Khula', sans-serif;
+  font-size: 15px;
 }
 
-/* line 137, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 138, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .titlehead {
   font-size: 36px;
 }
 
-/* line 141, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 142, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .card.img.top {
   border-style: solid;
   border-width: 1px;
   border-color: #CFCEDE;
 }
 
-/* line 147, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 148, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .new_photo {
   font-family: 'Khula', sans-serif;
   padding: 40px;
 }
 
-/* line 152, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 153, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .form-group {
   padding-top: 15px;
   padding-bottom: 15px;
   font-family: 'Khula', sans-serif;
 }
 
-/* line 158, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 159, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .form_button {
   background-color: #9EACC3;
 }
 
-/* line 162, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 163, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .commentcontainer {
   margin-top: 20px;
   margin-left: 100px;
 }
 
-/* line 167, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 168, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .comments {
   font-family: 'Khula', sans-serif;
   border-style: solid;
@@ -10177,41 +10178,42 @@ body {
   font-size: 16px;
 }
 
-/* line 180, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 181, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .comment-title {
   font-size: 30px;
 }
 
-/* line 184, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 185, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .commentform {
   margin-top: 50px;
 }
 
-/* line 188, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 189, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .description {
   font-size: 18px;
   font-family: 'Khula', sans-serif;
+  max-width: 385px;
 }
 
-/* line 192, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 194, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .cat {
   font-size: 14px;
   font-family: 'Khula', sans-serif;
 }
 
-/* line 197, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 199, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .date {
   font-size: 14px;
   font-family: 'Khula', sans-serif;
 }
 
-/* line 202, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 204, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .commentdate {
   text-align: right;
   font-size: 14px;
 }
 
-/* line 207, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 209, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .cardwhole {
   border-style: solid;
   border-width: 5px;
@@ -10219,4 +10221,20 @@ body {
   background-color: white;
   margin-left: 12px;
   border-radius: 3px;
+}
+
+/* line 218, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+form.new_user {
+  font-family: 'Khula', sans-serif;
+  margin-left: 20px;
+}
+
+/* line 223, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.field {
+  padding: 20px;
+}
+
+/* line 226, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.actions {
+  margin-top: 20px;
 }
