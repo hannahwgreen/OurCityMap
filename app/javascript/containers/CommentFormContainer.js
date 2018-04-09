@@ -47,7 +47,7 @@ class CommentFormContainer extends Component {
 
   render() {
     return (
-      <div className='col commentsformrow'>
+      <div className='comment-form'>
       <form className="new-comment-form callout mb-5 commentform" onSubmit={this.handleSubmit}>
         <h3>Add Comment for this photo</h3>
         <CommentTextArea

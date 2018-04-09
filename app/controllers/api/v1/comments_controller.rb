@@ -5,9 +5,13 @@ class Api::V1::CommentsController < ApplicationController
   def index
     @comments = Comment.where(photo_id: params[:photo_id]).order('created_at desc')
     @comments = @comments.map { |comment|
+      date = DateTime.parse(comment.created_at.to_s)
+      date = date.new_offset('-04:00')
+      date = date.strftime('%m-%d-%Y %I:%M:%S %p')
       {
         comment: comment,
         display_name: comment.user.display_name,
+        created_at: date
       }
     }
 

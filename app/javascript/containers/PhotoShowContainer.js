@@ -26,7 +26,6 @@ class PhotoShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      debugger
       this.setState({
         photo: body.photo,
         url: body.photo.image.url,
@@ -42,8 +41,8 @@ class PhotoShowContainer extends Component {
     let photo_description = this.state.photo.description
 
     return(
-      <div>
-      <div className='photoshowtile'>
+      <div className='photoshow'>
+      <div className='row'>
         <PhotoShowTile
           key={photo_id}
           id={photo_id}
@@ -53,7 +52,8 @@ class PhotoShowContainer extends Component {
           date={this.state.date}
         />
       </div>
-      <div className='commentcontainer'>
+
+      <div className='commentcontainer row'>
         <CommentContainer
           id={this.props.params.id}
         />

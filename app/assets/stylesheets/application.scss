@@ -66,53 +66,52 @@ ul.suggestions {
 
  body {
   position: relative;
-  background-color: #FCFCFD;
+  background-color: #FAF9FB;
   font-family: 'Lobster', cursive;
 }
 
 .list-group {
-  margin-top: 20px;
+  margin-top: 0px;
   max-height:400px;
   overflow-y:auto;
   width:150%;
+  background-color: #F2F1F6;
+  padding-top: 20px;
 }
 
 #newphotolink {
   color: black;
 }
 
-.photoshowtile {
-  margin-top: 20px;
-  margin-bottom: 30px;
+.showtileimg{
+  height: 490px;
+  width: auto;
+  padding: 7px;
+  background-color: #F2F1F6;
 }
-
-.commentform {
-  margin: 30px auto;
-}
-
 
 .showtile {
   font-family: 'Khula', sans-serif;
-  height: 500px;
+  height: 490px;
   width: auto;
-  margin-left: 100px;
+
 }
 
 .card-body.show {
   font-family: 'Khula', sans-serif;
   text-align: left;
-  margin-left: 100px;
   margin-bottom: 20px;
+  width: auto;
 }
 
-.comments {
-  font-family: 'Khula', sans-serif;
-  margin-top: 80px;
-  margin-left: 58px;
-}
-
-.moveme {
+.page{
+  border-style: solid;
+  border-width: 10px;
+  border-color: #F2F1F6;
+  margin-bottom: 50px;
   margin-top: 50px;
+  margin-left: 100px;
+  background-color: #F2F1F6;
 }
 
 .off{
@@ -141,12 +140,72 @@ ul.suggestions {
 
 .card {
   border-style: solid;
-  border-width: 1px;
-  border-color: #CFCEDE;
+  border-width: 5px;
+  border-color: white;
 }
 
 .card.img.top{
   border-style: solid;
   border-width: 1px;
   border-color: #CFCEDE;
+}
+
+.new_photo{
+  font-family: 'Khula', sans-serif;
+  padding: 40px
+}
+
+.form-group{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: 'Khula', sans-serif;
+}
+
+.form_button {
+  background-color: #9EACC3;
+}
+
+.commentcontainer{
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.comments{
+  font-family: 'Khula', sans-serif;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 5px;
+  width: 800px;
+  height: auto;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.comment-title{
+  font-size: 30px;
+}
+
+.commentform{
+  margin-top: 50px;
+}
+
+.description {
+  font-size: 18px;
+  font-family: 'Khula', sans-serif;
+}
+.cat {
+  font-size: 14px;
+  font-family: 'Khula', sans-serif;
+}
+
+.date{
+  font-size: 14px;
+  font-family: 'Khula', sans-serif;
+}
+
+.commentdate{
+  text-align: right;
+  font-size: 14px;
 }

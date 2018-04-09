@@ -80,7 +80,7 @@ class CommentContainer extends Component {
         <CommentTile
           key={comment.comment.id}
           id={comment.comment.id}
-          date={comment.comment.updated_at}
+          date={comment.created_at}
           body={comment.comment.body}
           creator={comment.display_name}
         />
@@ -88,8 +88,9 @@ class CommentContainer extends Component {
     })
 
     return(
-      <div className="col moveme">
-        <ul className="list-unstyled comments">
+      <div>
+        <p className='comment-title'>Comments:</p>
+        <ul className="list-unstyled">
           {comments}
         </ul>
         <CommentFormContainer
