@@ -70,15 +70,6 @@ ul.suggestions {
   font-family: 'Lobster', cursive;
 }
 
-.list-group {
-  margin-top: 0px;
-  max-height:400px;
-  overflow-y:auto;
-  width:150%;
-  background-color: #F2F1F6;
-  padding-top: 20px;
-}
-
 #newphotolink {
   color: black;
 }
@@ -202,6 +193,15 @@ ul.suggestions {
 .commentdate{
   text-align: right;
   font-size: 14px;
+}
+
+.list-group {
+  margin-top: 0px;
+  max-height:400px;
+  overflow-y:auto;
+  width:150%;
+  background-color: #F2F1F6;
+  padding-top: 20px;
 }
 
 .cardwhole {
