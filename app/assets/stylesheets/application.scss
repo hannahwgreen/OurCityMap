@@ -132,6 +132,7 @@ ul.suggestions {
 
 .card-text{
   font-family: 'Khula', sans-serif;
+  font-size: 15px;
 }
 
 .titlehead{
@@ -188,6 +189,7 @@ ul.suggestions {
 .description {
   font-size: 18px;
   font-family: 'Khula', sans-serif;
+  max-width: 385px;
 }
 .cat {
   font-size: 14px;
@@ -211,4 +213,16 @@ ul.suggestions {
   background-color: white;
   margin-left: 12px;
   border-radius:3px;
+}
+
+form.new_user{
+  font-family: 'Khula', sans-serif;
+  margin-left: 20px;
+}
+
+.field{
+  padding: 20px;
+}
+.actions {
+  margin-top: 20px;
 }
