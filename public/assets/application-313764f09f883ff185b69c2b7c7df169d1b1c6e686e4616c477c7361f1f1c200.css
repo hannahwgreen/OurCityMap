@@ -10051,68 +10051,65 @@ ul.suggestions {
 /* line 67, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 body {
   position: relative;
-  background-color: #FCFCFD;
+  background-color: #FAF9FB;
   font-family: 'Lobster', cursive;
 }
 
 /* line 73, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .list-group {
-  margin-top: 20px;
+  margin-top: 0px;
   max-height: 400px;
   overflow-y: auto;
   width: 150%;
+  background-color: #F2F1F6;
+  padding-top: 20px;
 }
 
-/* line 80, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 82, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 #newphotolink {
   color: black;
 }
 
-/* line 84, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
-.photoshowtile {
-  margin-top: 20px;
-  margin-bottom: 30px;
+/* line 86, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.showtileimg {
+  height: 490px;
+  width: auto;
+  padding: 7px;
+  background-color: #F2F1F6;
 }
 
-/* line 89, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
-.commentform {
-  margin: 30px auto;
-}
-
-/* line 94, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 93, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .showtile {
   font-family: 'Khula', sans-serif;
-  height: 500px;
+  height: 490px;
   width: auto;
-  margin-left: 100px;
 }
 
-/* line 101, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 100, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .card-body.show {
   font-family: 'Khula', sans-serif;
   text-align: left;
-  margin-left: 100px;
   margin-bottom: 20px;
+  width: auto;
 }
 
-/* line 108, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
-.comments {
-  font-family: 'Khula', sans-serif;
-  margin-top: 80px;
-  margin-left: 58px;
-}
-
-/* line 114, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
-.moveme {
+/* line 107, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.page {
+  border-style: solid;
+  border-width: 10px;
+  border-color: #F2F1F6;
+  margin-bottom: 50px;
   margin-top: 50px;
+  margin-left: 100px;
+  background-color: #F2F1F6;
 }
 
-/* line 118, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 117, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .off {
   font-size: 20px;
 }
 
-/* line 122, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 121, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .on {
   background-color: #F0DDEA;
   padding-top: 10px;
@@ -10125,26 +10122,101 @@ body {
   font-size: 20px;
 }
 
-/* line 134, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 133, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .card-text {
   font-family: 'Khula', sans-serif;
 }
 
-/* line 138, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+/* line 137, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
 .titlehead {
   font-size: 36px;
 }
 
-/* line 142, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
-.card {
+/* line 141, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.card.img.top {
   border-style: solid;
   border-width: 1px;
   border-color: #CFCEDE;
 }
 
-/* line 148, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
-.card.img.top {
+/* line 147, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.new_photo {
+  font-family: 'Khula', sans-serif;
+  padding: 40px;
+}
+
+/* line 152, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.form-group {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: 'Khula', sans-serif;
+}
+
+/* line 158, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.form_button {
+  background-color: #9EACC3;
+}
+
+/* line 162, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.commentcontainer {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+/* line 167, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.comments {
+  font-family: 'Khula', sans-serif;
   border-style: solid;
+  border-color: black;
   border-width: 1px;
-  border-color: #CFCEDE;
+  border-radius: 2px;
+  padding: 5px;
+  width: 800px;
+  height: auto;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* line 180, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.comment-title {
+  font-size: 30px;
+}
+
+/* line 184, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.commentform {
+  margin-top: 50px;
+}
+
+/* line 188, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.description {
+  font-size: 18px;
+  font-family: 'Khula', sans-serif;
+}
+
+/* line 192, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.cat {
+  font-size: 14px;
+  font-family: 'Khula', sans-serif;
+}
+
+/* line 197, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.date {
+  font-size: 14px;
+  font-family: 'Khula', sans-serif;
+}
+
+/* line 202, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.commentdate {
+  text-align: right;
+  font-size: 14px;
+}
+
+/* line 207, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.cardwhole {
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  background-color: white;
+  margin-left: 12px;
+  border-radius: 3px;
 }
