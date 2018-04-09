@@ -3,7 +3,7 @@ class Api::V1::CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create]
 
   def index
-    @comments = Comment.where(photo_id: params[:photo_id]).order('created_at desc')
+    @comments = Comment.where(photo_id: params[:photo_id]).order('created_at asc')
     @comments = @comments.map { |comment|
       date = DateTime.parse(comment.created_at.to_s)
       date = date.new_offset('-04:00')
@@ -34,7 +34,8 @@ class Api::V1::CommentsController < ApplicationController
       render json: {
         comment: {
           comment: comment,
-          display_name: comment.user.display_name
+          display_name: comment.user.display_name,
+          created_at: comment.created_at
         }
       }
     else

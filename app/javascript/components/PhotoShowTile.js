@@ -8,6 +8,7 @@ const PhotoShowTile = props => {
       </div>
       <div className="card-body">
         <p className='description'>{props.description}</p>
+        <p className='poster'>Posted By: {props.creator}</p>
         <p className='cat'>Category: {props.category}</p>
         <p className='card-subtitle mb-2 text-muted date'>Created at {props.date}</p>
       </div>

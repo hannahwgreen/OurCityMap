@@ -8,7 +8,8 @@ class PhotoShowContainer extends Component {
       photo: {},
       url: '',
       category: '',
-      date: ''
+      date: '',
+      creator: ''
     }
   }
 
@@ -30,7 +31,8 @@ class PhotoShowContainer extends Component {
         photo: body.photo,
         url: body.photo.image.url,
         category: body.category,
-        date: body.date
+        date: body.date,
+        creator: body.creator
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -39,7 +41,6 @@ class PhotoShowContainer extends Component {
   render() {
     let photo_id = this.state.photo.id
     let photo_description = this.state.photo.description
-
     return(
       <div className='photoshow'>
       <div className='row'>
@@ -50,6 +51,7 @@ class PhotoShowContainer extends Component {
           description={photo_description}
           category={this.state.category}
           date={this.state.date}
+          creator={this.state.creator}
         />
       </div>
 
