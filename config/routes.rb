@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
-      namespace :v1 do
-        resources :photos do
-          resources :comments
-        end
-        resources :categories 
+    namespace :v1 do
+      resources :photos do
+        resources :comments
       end
+      resources :categories
     end
-    resources :photos, only: [:new, :create, :show]
+  end
+  resources :photos, only: [:new, :create, :show]
 end

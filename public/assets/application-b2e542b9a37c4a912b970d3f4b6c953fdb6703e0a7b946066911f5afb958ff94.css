@@ -10238,3 +10238,9 @@ form.new_user {
 .actions {
   margin-top: 20px;
 }
+
+/* line 230, /Users/hannahgreen/Desktop/Programs/new_toy/app/assets/stylesheets/application.scss */
+.poster {
+  font-family: 'Khula', sans-serif;
+  font-size: 14px;
+}
