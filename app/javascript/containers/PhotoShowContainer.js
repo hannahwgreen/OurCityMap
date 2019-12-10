@@ -39,19 +39,18 @@ class PhotoShowContainer extends Component {
   }
 
   render() {
-    let photo_id = this.state.photo.id
-    let photo_description = this.state.photo.description
+    const { category, creator, date, photo, url } = this.state;
     return(
       <div className='photoshow'>
       <div className='row'>
         <PhotoShowTile
-          key={photo_id}
-          id={photo_id}
-          image={this.state.url}
-          description={photo_description}
-          category={this.state.category}
-          date={this.state.date}
-          creator={this.state.creator}
+          key={photo.id}
+          id={photo.id}
+          image={url}
+          description={photo.description}
+          category={category}
+          date={date}
+          creator={creator}
         />
       </div>
 

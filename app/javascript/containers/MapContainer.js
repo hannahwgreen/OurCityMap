@@ -20,8 +20,7 @@ class MapContainer extends React.Component {
   }
 
   onClickMap(map, evt) {
-    let lng = evt.lngLat.lng
-    let lat = evt.lngLat.lat
+    const { lat, lng } = evt.lngLat
     this.setState({newPhotoCoordinates: [lng, lat]})
   }
 

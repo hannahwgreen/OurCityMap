@@ -75,14 +75,16 @@ class CommentContainer extends Component {
   }
 
   render() {
-    let comments = this.state.comments.map(comment => {
+    let comments = this.state.comments.map(c => {
+      const { comment, created_at, display_name } = c
+
       return(
         <CommentTile
-          key={comment.comment.id}
-          id={comment.comment.id}
-          date={comment.created_at}
-          body={comment.comment.body}
-          creator={comment.display_name}
+          key={comment.id}
+          id={comment.id}
+          date={created_at}
+          body={comment.body}
+          creator={display_name}
         />
       )
     })

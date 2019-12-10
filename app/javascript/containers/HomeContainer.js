@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapContainer from './MapContainer';
 import PhotoStreamContainer from './PhotoStreamContainer';
 
+const CENTRAL_PHILADELPHIA_COORDINATES = [-75.16416549682616, 39.95054298488249]
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class HomeContainer extends Component {
       photos: [],
       selectedPhoto: null,
       selectedCategoryId: null,
-      center: [-75.16416549682616, 39.95054298488249]
+      center: CENTRAL_PHILADELPHIA_COORDINATES
     }
     this.handlePhotoStreamClick = this.handlePhotoStreamClick.bind(this);
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
@@ -20,34 +21,35 @@ class HomeContainer extends Component {
 
   handlePhotoStreamClick(e){
     let selectedCategoryId = this.state.selectedCategoryId
-   this.state.photos.map( photo => {
-     if (photo.id == e.target.id){
-       this.setState({selectedPhoto: photo, center: photo.coordinates})
-       if (photo.category_id != selectedCategoryId) {
-         this.setState({selectedCategoryId: null})
-     }}
-  })
-}
+    this.state.photos.map( photo => {
+      if (photo.id == e.target.id){
+        this.setState({selectedPhoto: photo, center: photo.coordinates})
+        if (photo.category_id != selectedCategoryId) {
+          this.setState({selectedCategoryId: null})
+      }}
+    })
+  }
 
 closeMarkerWindow(e){
   this.setState({selectedPhoto: null})
 }
 
 handleMarkerClick(e){
-  let center = [e.feature.properties.lng, e.feature.properties.lat]
+  const { lng, lat, photoId } = e.feature.properties
+  let center = [ lng, lat ]
   this.state.photos.map( photo => {
-    if (photo.id == e.feature.properties.photoId){
-      this.setState({selectedPhoto: photo, center: center})
+    if (photo.id == photoId){
+      this.setState({selectedPhoto: photo, center })
     }
   })
 }
 
 handleCategoryChange(e) {
-  this.setState({selectedPhoto: null})
+  this.setState({ selectedPhoto: null })
   if (e.target.id === this.state.selectedCategoryId) {
-    this.setState({selectedCategoryId: null})
+    this.setState({ selectedCategoryId: null })
   } else {
-    this.setState({selectedCategoryId: e.target.id})
+    this.setState({ selectedCategoryId: e.target.id })
   }
 }
 
@@ -69,25 +71,27 @@ handleCategoryChange(e) {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-
   render() {
+
+    const { center, photos, selectedCategoryId, selectedPhoto } = this.state
+
     return (
       <div>
         <div className='stream'>
           <PhotoStreamContainer
-            photos={this.state.photos}
+            photos={photos}
             handleClick={this.handlePhotoStreamClick}
           />
         </div>
         <div className='map' id='map'>
           <MapContainer
-            selectedPhoto={this.state.selectedPhoto}
-            photos={this.state.photos}
+            selectedPhoto={selectedPhoto}
+            photos={photos}
             handleClick={this.handleMarkerClick}
             closeMarker={this.closeMarkerWindow}
             handleCategoryChange={this.handleCategoryChange}
-            center={this.state.center}
-            selectedCategoryId={this.state.selectedCategoryId}
+            center={center}
+            selectedCategoryId={selectedCategoryId}
           />
         </div>
       </div>

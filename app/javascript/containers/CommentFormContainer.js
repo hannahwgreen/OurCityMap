@@ -9,26 +9,12 @@ class CommentFormContainer extends Component {
       errors: {}
     }
     this.handleBodyChange = this.handleBodyChange.bind(this);
-    // this.validateBody = this.validateBody.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleBodyChange(event) {
     this.setState({body: event.target.value})
   }
-
-  // validateBody(body) {
-  //   if (body === '' || body === ' ') {
-  //     let newError = { body: 'Review may not be blank.' }
-  //     this.setState({ errors: Object.assign(this.state.errors, newError) })
-  //     return false
-  //   } else {
-  //     let errorState = this.state.errors
-  //     delete errorState.body
-  //     this.setState({ errors: errorState })
-  //     return true
-  //   }
-  // }
 
   handleClear(event) {
     event.preventDefault();
